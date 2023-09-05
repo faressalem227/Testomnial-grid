@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  background-color: var(--Lightgrayishblue);
+  position: relative;
+  overflow: scroll !important;
+}
+
+@media (max-width: 767px) {
+  body {
+    height: 2330px;
+  }
+}
+
+:root {
+  --Moderateviolet: hsl(263, 55%, 52%);
+  --Verydarkgrayishblue: hsl(217, 19%, 35%);
+  --Verydarkblackishblue: hsl(219, 29%, 14%);
+  --Lightgray: hsl(0, 0%, 81%);
+  --Lightgrayishblue: hsl(210, 46%, 95%);
+}
+
+.layout {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, calc((100% - 40px) / 4));
+  gap: 20px 20px;
+  perspective: 300px;
+}
+
+.layout > div {
+  padding: 5px 15px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.layout > div:hover {
+  transform: translate3d(0, 0, 5px);
+}
+
+.one {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  background-color: var(--Moderateviolet);
+  color: white;
+  position: relative;
+}
+
+.quotation {
+  position: absolute;
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  right: 30px;
+  width: 100px;
+  height: 100px;
+  z-index: -1;
+}
+
+.one .Review {
+  z-index: 1;
+}
+
+.info {
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.image {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 6px;
+  margin-right: 13px;
+}
+
+.one .image {
+  background-image: url(../images/image-daniel.jpg);
+}
+
+span {
+  display: inline-block;
+}
+
+span p {
+  width: fit-content;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+
+.three .name,
+.four .name {
+  color: var(--Verydarkblackishblue);
+}
+
+.degree {
+  font-size: 13px;
+  color: white;
+  opacity: 50%;
+}
+
+.three .degree,
+.four .degree {
+  color: var(--Verydarkblackishblue);
+}
+
+.two {
+  background-color: var(--Verydarkgrayishblue);
+  color: white;
+}
+
+.two .image {
+  background-image: url(../images/image-jonathan.jpg);
+}
+
+.three {
+  grid-row: 1/3;
+  background-color: white;
+}
+
+.three .image {
+  background-image: url(../images/image-kira.jpg);
+}
+
+.four {
+  background-color: white;
+}
+
+.four .image {
+  background-image: url(../images/image-jeanette.jpg);
+}
+
+.five {
+  grid-column: 2/4;
+  grid-row: 2;
+  background-color: var(--Verydarkblackishblue);
+  color: white;
+}
+
+.five .image {
+  background-image: url(../images/image-patrick.jpg);
+}
+
+.bold {
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+}
+
+.three .bold,
+.four .bold {
+  color: var(--Verydarkblackishblue);
+}
+
+.Review {
+  color: white;
+  opacity: 70%;
+  font-weight: 400;
+}
+
+.three .Review,
+.four .Review {
+  color: var(--Verydarkblackishblue);
+}
+
+.attribution {
+  position: absolute;
+  bottom: -20px;
+  margin: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 767px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    height: 1704px;
+  }
+  .layout > div {
+    width: 100%;
+  }
+
+  .attribution {
+    bottom: 0;
+    display: none;
+  }
+}
